@@ -7,11 +7,11 @@ def generate_synthetic_data(beta):
     y = x @ beta + epsilon.T
     return x, y
 
-def optimize_coeffecients(x, y):
+def optimize_coefficients(x, y):
     b = np.linalg.inv(x.T @ x ) @ x.T @ y
     return b
 
 
 beta = np.array([3,5,2,9,1])
 x, y = generate_synthetic_data(beta)
-print(optimize_coeffecients(x,y))
+print(optimize_coefficients(x,y))

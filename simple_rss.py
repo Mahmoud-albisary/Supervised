@@ -8,7 +8,7 @@ def generate_synthetic_data(b_1 = 3, b_0 = 5):
     y = b_1 * x[:,0] +(b_0 * np.ones(1000)).T + epsilon.T
     return x, y
 
-def optimize_coeffecients(x, y):
+def optimize_coefficients(x, y):
     b = np.linalg.inv(x.T @ x ) @ x.T @ y
     return b
 
@@ -20,5 +20,5 @@ def set_line(b, points):
     plt.show()
 
 x,y = generate_synthetic_data()
-b = optimize_coeffecients(x, y)
+b = optimize_coefficients(x, y)
 set_line(b, (x,y))
