@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 def generate_synthetic_data(beta):
     x_1 = np.random.random([1000, beta.shape[0] - 1]) *10
@@ -11,13 +10,6 @@ def generate_synthetic_data(beta):
 def optimize_coeffecients(x, y):
     b = np.linalg.inv(x.T @ x ) @ x.T @ y
     return b
-
-def set_line(b, points):
-    x = np.arange(0,11)
-    y = b[0] * x + b[1]
-    plt.plot(x,y, color = 'red')
-    plt.scatter(points[0][:,0], points[1])
-    plt.show()
 
 
 beta = np.array([3,5,2,9,1])
